@@ -20,6 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::post('/auth/register', [AuthController::class, 'register']);
+Route::post('/auth/refreshToken', [AuthController::class, 'refreshToken']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 Route::get('/auth/checkEmail', [AuthController::class, 'checkEmail']);
 Route::get('/auth/profile', [AuthController::class, 'profile'])->middleware('auth:api');
